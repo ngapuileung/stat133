@@ -1,0 +1,5 @@
+name = "Nga Pui Leung"
+SID = "25237110"
+email = "ngapui.leung@berkeley.edu"
+github_name = "ngapuileung"
+status = "enrolled"
