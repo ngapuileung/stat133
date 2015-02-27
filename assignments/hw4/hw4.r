@@ -15,7 +15,7 @@
 
 listLengths <- function(data.list) {
 
-    # your code here
+    element.lengths <- sapply(data.list, length)
 
 }
 
@@ -31,10 +31,12 @@ listLengths <- function(data.list) {
 #              the column names should be : "x", "x^2", "x^3" etc.
 
 powers <- function(x, k){
+  
+  x.powers <- matrix(x, nrow = length(x), ncol = k)
+  colnames(x.power) <- paste("x^", 1:k, sep="")
 
 }
 
- 
 #### Function #3
 #### Implement the function "recipeConversion"
 
@@ -65,8 +67,18 @@ powers <- function(x, k){
 # Put your code here
 recipeConversion <- function(recipe){
 
+ if (colnames(recipe)[1] != "amount", colnames(recipe)[2] != "unit", colnames(recipe)[3] != "ingredient"){
+   stop("Column names must be "amount", "unit", and "ingredient"")
+ } else if ((recipe$unit == "cup") | (recipe$unit == "cups")){
+   recipe$amount * 236.6 & recipe$unit = ml
+ } else if (recipe$unit == "oz"){
+   recipe$amount * 28.3 & recipe$unit = gr
+ } else if ((receipe$unit != "cup") | (recipe$unit == "cups") | (recipe $unit == "oz")){
+   
+ }
 }
 
+recipe.metric <- recipeConversion(recipe)
 
 #### Function #4a
 # Implement the function "bootstrapVarEst"
@@ -90,8 +102,14 @@ recipeConversion <- function(recipe){
 # -- The bootstrap variance is the sample variance of mu_1, mu_2, ..., mu_B
 
 bootstrapVarEst <- function(x, B){
+  
+  bootstrap_sample <- replicate(B, sample(x), replace = TRUE)
+  mu_i <- mean(bootstrap_sample)
+  var(mu_i)
 
 }
+
+boot.sigma2.est <- bootstrapVarEst(x, B)
 
 #### Function #4b
 #### Implement the function "jackknifeVarEst"
@@ -111,24 +129,43 @@ bootstrapVarEst <- function(x, B){
 #     for this reduced sample calculate the sample mean (get mu_1, mu_2, ..., mu_n)
 # -- The jackknife variance is the sample variance of mu_1, mu_2, ..., mu_n
 
-jackknifeVarEst <- fuction(x){
+jackknifeVarEst <- function(x){
 
+  subsample <- numeric(length(x)-1)
+  for (i in 1:length(x)){
+    sample_mean <- mean(subsample)
+  }
+  var(sample_mean)
+    
 }
 
+jack.sigma.est <- jackknifeVarEst(x)
+  
 #### Function #4c
 #### Implement the function "samplingVarEst"
 
 # Input variables:
 # <x> : data vector
 # <type> : string that takes the values "bootstrap" or "jackknife", the default should be bootstrap.
+# <samplingVarEst> : B, the number of iterations, with a default value of 1000
 
 # Output variable:
 # <sampling.sigma.est> : The bootstrap estimate if type="bootstrap" and the jackknife estimate if type="jackknife"
 
 # Note: this function calls the previous two functions.
 
-samplingVarEst <- function(  ){
-
+samplingVarEst <- function(x, type){
+  
+  B <- 1000
+  if(type == "bootstrap"){
+    return(bootstrapVarEst(x, B))
+  }
+  if(type == "jackknife"){
+    return(jackknifeVarEst(x))
+  }
+  
 }
+
+sampling.sigma.est <- samplingVarEst(x, type)
 
 
