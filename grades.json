@@ -19,5 +19,6 @@
     "login": "ngapuileung", 
     "name": "Nga Pui Leung", 
     "status": "enrolled", 
-    "url": "git@github.com:ngapuileung/stat133.git"
+    "url": "git@github.com:ngapuileung/stat133.git", 
+    "section": "lab1"
 }
