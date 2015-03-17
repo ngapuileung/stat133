@@ -3,20 +3,20 @@
 
 ## In one R command, create a variable [[ x ]] which is a vector and has
 ## all the even numbers between 2 and 20, in increasing order.
-
+x <- seq(2, 20, by=2)
 
 ## In one R command, create a variable [[ y ]] which is a vector and has
 ## all the odd numbers between -1 and -19, in decreasing order
-
+y <- seq(-1, -19, by=-2)
 
 ## In one R command, create a variable [[ z ]] which is a vector and has
 ## the numbers 1 through 5, each repeated 4 times, in order (so 1 1 1 1 2 2 2 2 etc.)
-
+z <- rep(1:5, times = 4)
 
 ## In one R command, create a variable [[ m ]] that is a 3-by-4 matrix and has
 ## the entries 10, 20, through 120, where the numbers are entered row by row
 ## (so the first row is [ 10 20 30 40 ]).
-
+m <- matrix(seq(10, 120, by=10), nrow = 3, byrow=T)
 
 ## Create a variable [[ n ]] that is a data frame of dimension 10 x 3
 ## where the first column is the numbers 1-10, the second column the letters a-j and the

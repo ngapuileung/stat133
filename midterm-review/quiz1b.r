@@ -6,8 +6,8 @@
 # calculate the mean and median age in the family. Store these as the
 # variables <mean.age> and <med.age> respectively.
 
-# mean.age <- your code here
-# med.age <- your code here
+mean.age <- mean(family$age)
+med.age <- median(family$age)
 
 
 # For each person in the dataset, calculate the squared difference between its
@@ -15,22 +15,21 @@
 # <height.diffs>. Note that this should be a numeric vector with length equal to
 # the number of observations in the dataset
 
-# height.diffs <- your code here
-
+height.diffs <- (family$height - mean(family$height))^2)
 
 
 # Please create the following two data frames and store them with the indicated names:
 # 1) people whose age is strictly greater than <mean.age>:  <ppl.old>
 # 2) people whose age is less than or equal to <mean.age>: <ppl.young>
 
-# ppl.old <- your code here
-# ppl.young <- your code here
+ppl.old <- family[{family$age, ]] > mean.age
+ppl.young <- family[[family$age]] <= mean.age
 
 # For each of your subsets, create a vector giving the weight of each person. Name
 # these variables <ppl.old.weight> and <ppl.young.weight>.
 
-# ppl.old.weight <- your code here
-# ppl.young.weight <- your code here
+ppl.old.weight <- ppl.old$weight
+ppl.young.weight <- ppl.young$weight
 
 
 # Please implement the function bmiByheight. Your function should take the
@@ -47,7 +46,7 @@
 
 bmiByheight <- function(height.range, height, bmi) {
   
-  # your code here
+  if
   
 }
 
