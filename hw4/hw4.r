@@ -65,17 +65,19 @@ powers <- function(x, k){
 # function should stop and print out an error message
 
 # Put your code here
+
+# PLEASE READ THE OR STATEMENTS || in R -- ANDY
 recipeConversion <- function(recipe){
 
- if (colnames(recipe)[1] != "amount", colnames(recipe)[2] != "unit", colnames(recipe)[3] != "ingredient"){
-   stop("Column names must be "amount", "unit", and "ingredient"")
- } else if ((recipe$unit == "cup") | (recipe$unit == "cups")){
-   recipe$amount * 236.6 & recipe$unit = ml
- } else if (recipe$unit == "oz"){
-   recipe$amount * 28.3 & recipe$unit = gr
- } else if ((receipe$unit != "cup") | (recipe$unit == "cups") | (recipe $unit == "oz")){
+# if (colnames(recipe)[1] != "amount", colnames(recipe)[2] != "unit", colnames(recipe)[3] != "ingredient"){
+#   stop("Column names must be amount, unit, and ingredient")
+# } else if ((recipe$unit == "cup") | (recipe$unit == "cups")){
+#  recipe$amount * 236.6 & recipe$unit = ml
+#} else if (recipe$unit == "oz"){
+#  recipe$amount * 28.3 & recipe$unit = gr
+#} else if ((receipe$unit != "cup") | (recipe$unit == "cups") | (recipe $unit == "oz")){
    
- }
+   #}
 }
 
 recipe.metric <- recipeConversion(recipe)
