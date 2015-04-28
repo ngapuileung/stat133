@@ -1,1 +1,5 @@
-Score£º 0/20
+wrong understanding of genBootY  -2
+fitModel: return the coefficients, not the full model  -2
+no output due to error   -2
+
+Score: 14/20
