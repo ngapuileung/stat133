@@ -1,16 +1,24 @@
-Total: 0/20
-##!! HW not completed
+Total: 16/20
 
-Is n.speeches correct? 0/2
-Are presidents and tempDates correct? 0/2
-Are speechYr and speechMo correct? 0/2
+Is n.speeches correct? 2/2
+Are presidents and tempDates correct? 2/2
+Are speechYr and speechMo correct? 2/2
 
-Is speechToWords reasonable? 0/2
-Are wordVecs and wordMat reasonable? 0/2
-Is presidentWordMat reasonable? 0/2
+Is speechToWords reasonable? 2/2
+Are wordVecs and wordMat reasonable? 1/2
+##!! in line 111 you have
+##!! speeches[breaks[i] + 6:breaks[i+1] - 1]
+##!! but you want speeches[(breaks[i] + 6):(breaks[i+1] - 1)]
+##!! this is because 2-1:3-1 is not the same as (2-1):(3-1).
+##!! As a result your speeches are split in the wrong locations.
+Is presidentWordMat reasonable? 1/2
+##!! There is an off by one error in the construction of presidents;
+##!! it has last entry NA, so the presidentWordMat code breaks.
 
 Plots
-Are the multi-dimensional scaling plots correct? 0/2
-Is the hierarchical clustering plot appropriate? 0/1
-Are the five plots showing speech year and sentences/words/characters/word length/sentence length well done? 0/5
+Are the multi-dimensional scaling plots correct? 1/2
+##!! The second MDS plot does not show president names coloured by party.
+Is the hierarchical clustering plot appropriate? 1/1
+Are the five plots showing speech year and sentences/words/characters/word length/sentence length well done? 4/5
+##!! It should be speechesDF$year rather than speechesDF$yr
 
