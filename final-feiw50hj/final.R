@@ -243,7 +243,7 @@ max.rain <- lapply(rain, max)
 # Hint: you can use the function [diff()] to get the difference between entry i and i+1 in a vector 
 # and the function [abs()] for absolute value
 # max.diff.rain <- <your code here>
-max.diff.rain <- lapply(rain, abs(diff(max.rain[i]:max.rain[i+1])))
+#max.diff.rain <- lapply(rain, abs(diff(max.rain[i]:max.rain[i+1])))
 
 # [5 pts]
 # Create [prop.rain], a vector of length 5 where each entry is the 
@@ -273,7 +273,7 @@ par(mfrow=c(2,3))
 #   a vector of n normal random variables with mean=mean and sd=sd
 #   an optional plot
 
-function <- GenNorm(mean = 0, sd = 1, n = 1000, plot.hist = TRUE){
+GenNorm <- function(mean = 0, sd = 1, n = 1000, plot.hist = TRUE){
 rnorm(n, mean = mean, sd = sd)
 }
 
@@ -290,10 +290,12 @@ rnorm(n, mean = mean, sd = sd)
 
 
 standardizeVar <- function(m, cols=TRUE){
-if cols == TRUE:
+if (cols == TRUE) {
   mean(col)/sd(col)
-else:
+}
+else {
   mean(row)/sd(row)
+}
 }
 
 # [8 pts]
@@ -348,16 +350,16 @@ set.seed(123456)
 #    generate a ticket for each player in turn, if they had the winning numbers 
 #    increase the counter by 1
 
-function <- NumJackpot(k, B){
+NumJackpot <- function(k, B){
 
 }
 
 # For B = 5000 and each value of k = 10000, 50000, 100000, 500000
 # Plot a histogram of the output from NumJackpot (i.e. four histograms)
-hist(NumJackpot(10000, 5000)
-hist(NumJackpot(50000, 5000)
-hist(NumJackpot(100000, 5000)
-hist(NumJackpot(500000, 5000)
+#hist(NumJackpot(10000, 5000)
+#hist(NumJackpot(50000, 5000)
+#hist(NumJackpot(100000, 5000)
+#hist(NumJackpot(500000, 5000)
      
 #################################################################
 ##### PART VI : string manipulation and regular expressions [20 pts]
@@ -402,12 +404,12 @@ phrases2 <- sub("@", "a", phrases)
 dna <- c("AGGATGATT", "AGCCTTAGC", "AGAGAGCT", "AGTTTCGTA", "CGTGGTGC", "CTAAGTGAC", "GTGGGACC", "GGTAGAGAC", "TAGATTACC")
 # Create a vector [match1] with the index for all matches to "A*T" or "G*T"
 # match1 <- <your code here>
-match1 <- grep("A*T" & "G*T", dna)
+#match1 <- grep("A*T" & "G*T", dna)
 
 # [2 pts]
 # Create a vector [dna2] where you have removed all entries whose length is not a multiple of 3
 # dna2 <- <your code here>
-dna2 <- 
+#dna2 <- 
   
 #################################################################
 
